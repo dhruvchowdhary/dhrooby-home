@@ -1,0 +1,28 @@
+{
+  "redirects": [
+    {
+      "source": "/color-sphere",
+      "destination": "/color-sphere/",
+      "permanent": true
+    },
+    {
+      "source": "/unique-words",
+      "destination": "/unique-words/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/unique-words/",
+      "destination": "https://unique-words.vercel.app/unique-words/"
+    },
+    {
+      "source": "/unique-words/:match*",
+      "destination": "https://unique-words.vercel.app/unique-words/:match*"
+    },
+    {
+      "source": "/color-sphere/:match*",
+      "destination": "https://color-sphere.vercel.app/color-sphere/:match*"
+    }
+  ]
+}
