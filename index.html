@@ -91,8 +91,28 @@
       }
 
       footer {
+        width: min(100%, 28rem);
         margin-top: 2.5rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid #d4cfc4;
         text-align: center;
+      }
+
+      .footer-tagline {
+        margin: 0 0 1rem;
+        font-size: 0.88rem;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.35rem 0.75rem;
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
       }
 
       footer a {
@@ -105,6 +125,12 @@
       footer a:hover {
         color: #1a1a1a;
         text-decoration: underline;
+      }
+
+      .footer-copy {
+        margin: 0;
+        font-size: 0.8rem;
+        color: #888;
       }
     </style>
   </head>
@@ -133,7 +159,12 @@
       </nav>
     </main>
     <footer>
-      <a href="https://www.buymeacoffee.com/dhruvc" target="_blank" rel="noopener noreferrer">Buy me a coffee ☕</a>
+      <p class="footer-tagline">Fun things made by dhrooby.</p>
+      <ul class="footer-links" aria-label="Site links">
+        <li><a href="mailto:hello@dhrooby.com">hello@dhrooby.com</a></li>
+        <li><a href="https://www.buymeacoffee.com/dhruvc" target="_blank" rel="noopener noreferrer">Buy me a coffee ☕</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 dhrooby</p>
     </footer>
   </body>
 </html>
