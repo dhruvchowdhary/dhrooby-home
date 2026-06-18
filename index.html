@@ -62,7 +62,6 @@
         width: 100%;
         aspect-ratio: 1200 / 630;
         background: #e8e4db;
-        border-bottom: 1px solid #d4cfc4;
       }
 
       .card-media img {
@@ -72,22 +71,6 @@
         height: 100%;
         object-fit: contain;
         display: block;
-      }
-
-      .card-body {
-        padding: 0.9rem 1rem 1.05rem;
-      }
-
-      a.card strong {
-        display: block;
-        font-size: 1.05rem;
-        margin-bottom: 0.2rem;
-      }
-
-      a.card span {
-        font-size: 0.88rem;
-        color: #555;
-        line-height: 1.4;
       }
 
       footer {
@@ -132,28 +115,34 @@
         font-size: 0.8rem;
         color: #888;
       }
+
+      @media (min-width: 760px) {
+        main {
+          width: min(100%, 60rem);
+        }
+
+        footer {
+          width: min(100%, 60rem);
+        }
+
+        .cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
     </style>
   </head>
   <body>
     <main>
       <h1>dhrooby</h1>
       <nav class="cards" aria-label="Games">
-        <a class="card" href="/unique-words/">
+        <a class="card" href="/unique-words/" aria-label="Unique Words">
           <div class="card-media">
             <img src="/images/unique-words-og.png" alt="" />
           </div>
-          <div class="card-body">
-            <strong>Unique Words</strong>
-            <span>Claim words no one has played yet.</span>
-          </div>
         </a>
-        <a class="card" href="/color-sphere/">
+        <a class="card" href="/color-sphere/" aria-label="Color Sphere">
           <div class="card-media">
             <img src="/images/color-sphere-og.png" alt="" />
-          </div>
-          <div class="card-body">
-            <strong>Color Sphere</strong>
-            <span>Remember a flash of color on a 3D sphere.</span>
           </div>
         </a>
       </nav>
