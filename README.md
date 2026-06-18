@@ -2,6 +2,15 @@
 
 Static landing page for [dhrooby.com](https://www.dhrooby.com/) with links to the games. `vercel.json` proxies `/unique-words/` and `/color-sphere/` to their Vercel deployments.
 
+## Local dev
+
+```bash
+npm install
+npm run dev
+```
+
+Opens at http://localhost:5180 (homepage only — subpath proxies need production or `vercel dev`).
+
 ## Deploy
 
 1. Import this repo in Vercel (framework: **Other**, no build command).

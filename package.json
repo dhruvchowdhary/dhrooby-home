@@ -1,0 +1,10 @@
+{
+  "name": "dhrooby-home",
+  "private": true,
+  "scripts": {
+    "dev": "serve -l 5180"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
