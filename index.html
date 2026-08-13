@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dhrooby</title>
-    <meta name="description" content="dhrooby — Unique Words and Color Sphere." />
+    <meta
+      name="description"
+      content="dhrooby: Whensday, Unique Words, and Color Sphere."
+    />
     <link rel="canonical" href="https://www.dhrooby.com/" />
     <style>
       * {
@@ -55,6 +58,54 @@
       a.card:hover {
         border-color: #a8a196;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Whensday. The game cards above are image-only with empty alt text, so
+         anything reading this page as text used to see the single word
+         "dhrooby". Google's OAuth reviewers reach dhrooby.com as the authorized
+         domain for Whensday, so the app has to be named and explained here in
+         real text, not just linked. */
+      .apps {
+        max-width: 34rem;
+        margin: 2.5rem auto 0;
+      }
+
+      .apps h2 {
+        margin: 0 0 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #555;
+        text-align: center;
+      }
+
+      a.app-card {
+        padding: 1.5rem;
+      }
+
+      a.app-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      a.app-card p {
+        margin: 0 0 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: #555;
+      }
+
+      .app-link {
+        font-size: 0.88rem;
+        color: #555;
+      }
+
+      a.app-card:hover .app-link {
+        color: #1a1a1a;
+        text-decoration: underline;
       }
 
       .card-media {
@@ -146,6 +197,25 @@
           </div>
         </a>
       </nav>
+
+      <section class="apps" aria-labelledby="apps-heading">
+        <h2 id="apps-heading">Apps</h2>
+        <a class="card app-card" href="https://w.dhrooby.com">
+          <h3>Whensday</h3>
+          <p>
+            Whensday is an iPhone app for making plans with friends. It puts
+            your calendar and your friends' calendars side by side, so you can
+            see when everyone's actually free before you suggest a time. You
+            create an event, invite people, and they RSVP from a link without
+            installing anything.
+          </p>
+          <p>
+            It connects to Google Calendar and Apple Calendar, and friends only
+            ever see the hours you're busy, never what you're doing.
+          </p>
+          <span class="app-link">w.dhrooby.com</span>
+        </a>
+      </section>
     </main>
     <footer>
       <p class="footer-tagline">Fun things made by dhrooby.</p>
