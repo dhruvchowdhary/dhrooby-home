@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Pilots</title>
+    <meta
+      name="description"
+      content="Ghost Pilots is an arcade game for iPhone and iPad: turn, shoot, and take on Turret Boss, Endless, and online multiplayer."
+    />
+    <link rel="canonical" href="https://www.dhrooby.com/ghostpilots/" />
+    <link rel="icon" href="/images/ghost-pilots-icon.png" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #ece8df;
+        color: #1a1a1a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: clamp(2rem, 7vh, 3.5rem) 1.25rem 2rem;
+      }
+
+      main {
+        width: min(100%, 34rem);
+      }
+
+      .app-head {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .app-head img {
+        width: 96px;
+        height: 96px;
+        border-radius: 21px;
+        border: 1px solid #d4cfc4;
+      }
+
+      h1 {
+        margin: 0 0 0.35rem;
+        font-size: clamp(2rem, 7vw, 2.75rem);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+      }
+
+      .tagline {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      p {
+        line-height: 1.6;
+        color: #333;
+      }
+
+      h2 {
+        margin: 2.5rem 0 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #555;
+      }
+
+      ul.modes {
+        margin: 0;
+        padding-left: 1.1rem;
+        line-height: 1.7;
+        color: #333;
+      }
+
+      .shots {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .shots img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        border: 1px solid #d4cfc4;
+        background: #e8e4db;
+      }
+
+      .store {
+        display: inline-block;
+        margin-top: 1.75rem;
+        padding: 0.8rem 1.4rem;
+        background: #1a1a1a;
+        color: #f7f4ed;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: opacity 0.15s;
+      }
+
+      .store:hover {
+        opacity: 0.85;
+      }
+
+      footer {
+        width: min(100%, 34rem);
+        margin-top: 3rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid #d4cfc4;
+        text-align: center;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.35rem 0.75rem;
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
+      }
+
+      footer a {
+        font-size: 0.88rem;
+        color: #555;
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+
+      footer a:hover {
+        color: #1a1a1a;
+        text-decoration: underline;
+      }
+
+      .footer-copy {
+        margin: 0;
+        font-size: 0.8rem;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="app-head">
+        <img src="/images/ghost-pilots-icon.png" alt="Ghost Pilots app icon" />
+        <div>
+          <h1>Ghost Pilots</h1>
+          <p class="tagline">Turn &amp; shoot arcade action for iPhone and iPad.</p>
+        </div>
+      </div>
+
+      <p>
+        Ghost Pilots is an arcade game with a simple layout: turn and shoot.
+        Fly through waves of enemies, take on the Turret Boss, chase a high
+        score in Endless mode, or go head to head with friends online.
+      </p>
+
+      <h2>Modes</h2>
+      <ul class="modes">
+        <li><strong>Turret Boss</strong> — survive the boss fight and earn Polynite.</li>
+        <li><strong>Endless</strong> — keep flying as long as you can and climb the Game Center leaderboard.</li>
+        <li><strong>Online</strong> — battle your friends in real time.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <div class="shots">
+        <img src="/images/ghost-pilots-endless.jpeg" alt="Endless mode gameplay" />
+        <img src="/images/ghost-pilots-turret-boss.jpeg" alt="Turret Boss mode gameplay" />
+      </div>
+
+      <a class="store" href="https://apps.apple.com/app/id1538606743">Download on the App Store</a>
+    </main>
+    <footer>
+      <ul class="footer-links" aria-label="Ghost Pilots links">
+        <li><a href="/ghostpilots/support/">Support</a></li>
+        <li><a href="/ghostpilots/privacy/">Privacy Policy</a></li>
+        <li><a href="/">dhrooby</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 dhrooby</p>
+    </footer>
+  </body>
+</html>
