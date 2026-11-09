@@ -1,28 +1,40 @@
 {
   "redirects": [
     {
-      "source": "/color-sphere",
       "destination": "/color-sphere/",
-      "permanent": true
+      "permanent": true,
+      "source": "/color-sphere"
     },
     {
-      "source": "/unique-words",
       "destination": "/unique-words/",
-      "permanent": true
+      "permanent": true,
+      "source": "/unique-words"
     }
   ],
   "rewrites": [
     {
-      "source": "/unique-words/",
-      "destination": "https://unique-words.vercel.app/unique-words/"
+      "destination": "https://unique-words.vercel.app/unique-words/",
+      "source": "/unique-words/"
     },
     {
-      "source": "/unique-words/:match*",
-      "destination": "https://unique-words.vercel.app/unique-words/:match*"
+      "destination": "https://unique-words.vercel.app/unique-words/:match*",
+      "source": "/unique-words/:match*"
     },
     {
-      "source": "/color-sphere/:match*",
-      "destination": "https://color-sphere.vercel.app/color-sphere/:match*"
+      "destination": "https://color-sphere.vercel.app/:match*",
+      "source": "/color-sphere/:match*"
+    },
+    {
+      "destination": "https://color-sphere.vercel.app/_next/static/:match*",
+      "source": "/_next/static/:match*"
+    },
+    {
+      "destination": "https://color-sphere.vercel.app/_next/image",
+      "source": "/_next/image"
+    },
+    {
+      "destination": "https://color-sphere.vercel.app/icon.png",
+      "source": "/icon.png"
     }
   ]
 }

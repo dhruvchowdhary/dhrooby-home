@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dhrooby</title>
+    <title>dhrooby — games &amp; apps</title>
     <meta
       name="description"
-      content="dhrooby: Whensday, Unique Words, and Color Sphere."
+      content="dhrooby: Unique Words, Color Sphere, Ghost Pilots, and Whensday. Small games and useful apps, made by dhrooby."
     />
     <link rel="canonical" href="https://www.dhrooby.com/" />
     <style>
@@ -14,16 +14,26 @@
         box-sizing: border-box;
       }
 
+      :root {
+        --paper: #ece8df;
+        --card: #f7f4ed;
+        --ink: #1a1a1a;
+        --muted: #555;
+        --faint: #888;
+        --line: #d4cfc4;
+        --amber: #a86f14;
+        --space: #1c2440;
+      }
+
       body {
         margin: 0;
         min-height: 100dvh;
-        font-family: system-ui, -apple-system, sans-serif;
-        background: #ece8df;
-        color: #1a1a1a;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
         padding: clamp(2rem, 7vh, 3.5rem) 1.25rem 2rem;
       }
 
@@ -31,12 +41,37 @@
         width: min(100%, 28rem);
       }
 
+      /* Wordmark */
+      .wordmark {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
       h1 {
-        margin: 0 0 2rem;
-        font-size: clamp(2.5rem, 8vw, 3.75rem);
+        margin: 0 0 0.5rem;
+        font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+        font-size: clamp(2.75rem, 9vw, 4.25rem);
         font-weight: 600;
         letter-spacing: -0.03em;
-        text-align: center;
+      }
+
+      .tagline {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--muted);
+      }
+
+      section {
+        margin-bottom: 2.5rem;
+      }
+
+      section > h2 {
+        margin: 0 0 1rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
       }
 
       .cards {
@@ -44,40 +79,154 @@
         gap: 1.25rem;
       }
 
+      /* Game cards */
       a.card {
         display: block;
         overflow: hidden;
-        background: #f7f4ed;
-        border: 1px solid #d4cfc4;
-        border-radius: 12px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
         color: inherit;
         text-decoration: none;
-        transition: border-color 0.15s, box-shadow 0.15s;
+        transition:
+          border-color 0.15s,
+          box-shadow 0.15s,
+          transform 0.15s;
       }
 
       a.card:hover {
         border-color: #a8a196;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+
+      a.card:focus-visible {
+        outline: 3px solid var(--amber);
+        outline-offset: 2px;
+      }
+
+      .card-media {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1200 / 630;
+        background: #e8e4db;
+        overflow: hidden;
+      }
+
+      .card-media img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .card-body {
+        padding: 1.25rem 1.25rem 1.4rem;
+      }
+
+      .card-body h3 {
+        margin: 0 0 0.4rem;
+        font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .card-body p {
+        margin: 0 0 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: var(--muted);
+      }
+
+      .card-meta {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.75rem;
+        font-size: 0.82rem;
+        color: var(--faint);
+      }
+
+      .card-meta .go {
+        color: var(--ink);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      a.card:hover .go {
+        text-decoration: underline;
+      }
+
+      /* Letter tiles on the Unique Words card: a nod to the game itself. */
+      .tiles {
+        display: flex;
+        gap: 0.3rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .tiles span {
+        display: inline-grid;
+        place-items: center;
+        width: 1.65rem;
+        height: 1.65rem;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: #fffdf7;
+        font-family: Georgia, "Iowan Old Style", serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      /* The sphere on the Color Sphere card. */
+      .orb {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        margin-bottom: 0.85rem;
+        background:
+          radial-gradient(circle at 32% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 42%),
+          conic-gradient(from 210deg, #e4572e, #f3a712, #7fb069, #4a7fa5, #7d5ba6, #e4572e);
+        box-shadow:
+          inset 0 -4px 8px rgba(0, 0, 0, 0.18),
+          0 2px 6px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Ghost Pilots: the wide feature card, dark like the game. */
+      a.card--dark {
+        background: var(--space);
+        border-color: var(--space);
+        color: #f2efe8;
+      }
+
+      a.card--dark .card-body p {
+        color: #c3c8d8;
+      }
+
+      a.card--dark .card-meta {
+        color: #8d94ad;
+      }
+
+      a.card--dark .card-meta .go {
+        color: #f2efe8;
+      }
+
+      a.card--dark:hover {
+        border-color: #39436b;
+        box-shadow: 0 8px 28px rgba(28, 36, 64, 0.45);
       }
 
       /* Whensday. The game cards above are image-only with empty alt text, so
          anything reading this page as text used to see the single word
          "dhrooby". Google's OAuth reviewers reach dhrooby.com as the authorized
          domain for Whensday, so the app has to be named and explained here in
-         real text, not just linked. */
+         real text, not just linked. That still holds: keep this copy. */
       .apps {
         max-width: 34rem;
-        margin: 2.5rem auto 0;
-      }
-
-      .apps h2 {
-        margin: 0 0 1rem;
-        font-size: 1rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #555;
-        text-align: center;
+        margin: 0 auto;
       }
 
       a.app-card {
@@ -95,47 +244,38 @@
         margin: 0 0 0.75rem;
         font-size: 0.95rem;
         line-height: 1.55;
-        color: #555;
+        color: var(--muted);
+      }
+
+      a.app-card .coming {
+        margin: 0 0 0.75rem;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--ink);
       }
 
       .app-link {
         font-size: 0.88rem;
-        color: #555;
+        color: var(--muted);
       }
 
       a.app-card:hover .app-link {
-        color: #1a1a1a;
+        color: var(--ink);
         text-decoration: underline;
-      }
-
-      .card-media {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1200 / 630;
-        background: #e8e4db;
-      }
-
-      .card-media img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        display: block;
       }
 
       footer {
         width: min(100%, 28rem);
-        margin-top: 2.5rem;
+        margin-top: 0.5rem;
         padding-top: 1.75rem;
-        border-top: 1px solid #d4cfc4;
+        border-top: 1px solid var(--line);
         text-align: center;
       }
 
       .footer-tagline {
         margin: 0 0 1rem;
         font-size: 0.88rem;
-        color: #555;
+        color: var(--muted);
         line-height: 1.5;
       }
 
@@ -151,20 +291,20 @@
 
       footer a {
         font-size: 0.88rem;
-        color: #555;
+        color: var(--muted);
         text-decoration: none;
         transition: color 0.15s;
       }
 
       footer a:hover {
-        color: #1a1a1a;
+        color: var(--ink);
         text-decoration: underline;
       }
 
       .footer-copy {
         margin: 0;
         font-size: 0.8rem;
-        color: #888;
+        color: var(--faint);
       }
 
       @media (min-width: 760px) {
@@ -179,24 +319,97 @@
         .cards {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
+        a.card--wide {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+          align-items: stretch;
+        }
+
+        a.card--wide .card-media {
+          aspect-ratio: auto;
+          min-height: 100%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        a.card {
+          transition: none;
+        }
+
+        a.card:hover {
+          transform: none;
+        }
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>dhrooby</h1>
-      <nav class="cards" aria-label="Games">
-        <a class="card" href="/unique-words/" aria-label="Unique Words">
-          <div class="card-media">
-            <img src="/images/unique-words-og.png" alt="" />
-          </div>
-        </a>
-        <a class="card" href="/color-sphere/" aria-label="Color Sphere">
-          <div class="card-media">
-            <img src="/images/color-sphere-og.png" alt="" />
-          </div>
-        </a>
-      </nav>
+      <header class="wordmark">
+        <h1>dhrooby</h1>
+        <p class="tagline">Small games and useful apps, made by dhrooby.</p>
+      </header>
+
+      <section aria-labelledby="games-heading">
+        <h2 id="games-heading">Games</h2>
+        <nav class="cards" aria-label="Games">
+          <a class="card" href="/unique-words/">
+            <div class="card-media">
+              <img src="/images/unique-words-og.png" alt="Unique Words artwork" />
+            </div>
+            <div class="card-body">
+              <div class="tiles" aria-hidden="true">
+                <span>U</span><span>N</span><span>I</span><span>Q</span><span>U</span><span>E</span>
+              </div>
+              <h3>Unique Words</h3>
+              <p>
+                Submit English words no one has played yet. Claim unique words
+                and climb the leaderboard.
+              </p>
+              <div class="card-meta">
+                <span>Word game · Play in your browser</span>
+                <span class="go">Play →</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="card" href="/color-sphere/">
+            <div class="card-media">
+              <img src="/images/color-sphere-og.png" alt="Color Sphere artwork" />
+            </div>
+            <div class="card-body">
+              <div class="orb" aria-hidden="true"></div>
+              <h3>Color Sphere</h3>
+              <p>
+                Explore and create amazing color themes.
+              </p>
+              <div class="card-meta">
+                <span>Color themes · Play in your browser</span>
+                <span class="go">Play →</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="card card--dark card--wide" href="/ghostpilots/">
+            <div class="card-media">
+              <img src="/images/ghost-pilots-endless.jpeg" alt="Ghost Pilots Endless mode gameplay" />
+            </div>
+            <div class="card-body">
+              <h3>Ghost Pilots</h3>
+              <p>
+                Blast through enemy waves, take down the turret boss, and battle
+                friends online. Lose your ship? Keep fighting as a ghost.
+                Free to play.
+              </p>
+              <div class="card-meta">
+                <span>Arcade · iPhone &amp; iPad</span>
+                <span class="go">See the game →</span>
+              </div>
+            </div>
+          </a>
+        </nav>
+      </section>
 
       <section class="apps" aria-labelledby="apps-heading">
         <h2 id="apps-heading">Apps</h2>
@@ -213,6 +426,7 @@
             It connects to Google Calendar and Apple Calendar, and friends only
             ever see the hours you're busy, never what you're doing.
           </p>
+          <p class="coming">Coming to the App Store.</p>
           <span class="app-link">w.dhrooby.com</span>
         </a>
       </section>
